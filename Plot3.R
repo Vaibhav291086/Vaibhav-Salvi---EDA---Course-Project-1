@@ -19,6 +19,7 @@ subMetering1 <- as.numeric(subSetData$Sub_metering_1)
 subMetering2 <- as.numeric(subSetData$Sub_metering_2)
 subMetering3 <- as.numeric(subSetData$Sub_metering_3)
 
+##png("plot3.png", width=480, height=480)
 
 ##Basic plot function
 plot(subSetData$Time, subMetering1, type="l", xlab="", ylab="Energy sub metering")
@@ -28,8 +29,6 @@ with(subSetData, lines(subSetData$Time, subMetering2, col="red"))
 with(subSetData, lines(subSetData$Time, subMetering3, col="blue"))
 
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
-
-png("plot1.png", width=480, height=480)
 
 ## Annotate with a Title
 title(main="Energy sub metering vs Time")
